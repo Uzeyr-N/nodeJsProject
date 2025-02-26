@@ -1,12 +1,13 @@
-const express = require('express')
-const router = express.Router()
+const express = require("express");
+const router = express.Router();
 
-router.get('/', (req,res)=>{
-    res.render('main')
-})
+router.get("/", (req, res) => {
+  res.render('login.hbs');
+});
 
-router.get('/dashboard', (req,res)=>{
-    res.send('Dashboard')
-})
 
-module.exports = router
+router.get("/dashboard", (req, res) => {
+  res.render("dashboard");
+});
+
+module.exports = router;
