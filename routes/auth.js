@@ -8,9 +8,13 @@ const router = express.Router();
 
 router.get('/google', passport.authenticate('google', { scope: ['profile'] }));
 
+
 //Route GET /google/callback
-router.get('/.auth//google/callback', passport.authenticate('google', { failureRedirect: '/' }), (req, res) => {
-    res.redirect('/dashboard');
+router.get('/google/callback', (req, res) => {
+     passport.authenticate('google', { failureRedirect: '/' }), 
+    res.redirect('/dashboard'); 
 });
 
 module.exports = router;
+
+
